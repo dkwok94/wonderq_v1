@@ -1,0 +1,62 @@
+.App {
+  display: flex;
+  max-width: 1vh;
+}
+
+.messageQueue {
+  padding: 20px 200px;
+  border: 1px solid #2a5bb9;
+  margin: 30px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.message {
+  border: 1px solid gray;
+  padding: 0px 40px;
+  border-radius: 10px;
+  margin: 5px;
+  background-color: #2a5bb9;
+  color: #fff;
+}
+
+.buttonsContainer {
+  padding: 30px;
+  text-align: center;
+}
+
+.generateMessage, .consumeMessage {
+  border-radius: 3px;
+  border: 1px solid #2a5bb9;
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+  color: #2a5bb9;
+}
+
+.generateMessage:hover, .consumeMessage:hover {
+  background-color: #2a5bb9;
+  color: #fff;
+}
+
+.messageInput {
+  border-radius: 3px;
+  border: 1px solid #2a5bb9;
+}
+
+.messageInput:hover {
+  background-color: #2a5bb9;
+}
+
+.messageInput:focus {
+  background-color: #2a5bb9;
+  color: #fff;
+}
+
+ul {
+  padding: 0px;
+}
+
+li {
+  list-style: none;
+}
