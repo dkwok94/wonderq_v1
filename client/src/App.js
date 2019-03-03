@@ -13,6 +13,7 @@ class App extends Component {
     }
   }
 
+// Updates the messageQueue in the state of the application
   updateQueue = () => {
     fetch('http://localhost:3000/display_messages', {
       method: 'get',
@@ -20,6 +21,8 @@ class App extends Component {
     })
     .then((res) => res.json())
     .then((response) => {
+
+      // Fills an array with separate list HTML tags to render
       let pointer = response.head;
       let data = [];
       while (pointer !== null) {
@@ -32,10 +35,12 @@ class App extends Component {
     })
   }
 
+  // Grabs the textbox input
   onInputChange = (event) => {
     this.setState({message: event.target.value});
   }
 
+  // Handles the creation of messages through the API, sends the message in the request body, and updates the queue state
   handleProducer = () => {
     fetch('http://localhost:3000/new_message', {
       method: 'post',
@@ -50,6 +55,7 @@ class App extends Component {
     
   }
 
+  // Handles the consumption of the first message in the queue and updates the queue state
   handleConsumer = () => {
     fetch('http://localhost:3000/consume_message', {
       method: 'delete',
