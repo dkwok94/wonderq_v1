@@ -46,6 +46,7 @@
 
 .messageInput:hover {
   background-color: #2a5bb9;
+  color: #fff;
 }
 
 .messageInput:focus {
