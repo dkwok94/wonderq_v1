@@ -14,7 +14,7 @@ In order to install the software, `cd` into the `server` directory and run `npm 
 After doing this, start two separate terminals. `cd` into each directory and run `npm start` on each. Run the React front end on `localhost:3001` in a browser and you'll be able to see the queue and generate/consume messages from it.
 
 # API Endpoints
-## GET
+## GET /display_messages
 ```http://localhost:3000/display_messages```  
 This endpoint routes to a function that takes the request, the response, and the messageQueue instance as arguments. It takes the locally stored messageQueue and passes back a response containing the JSON of the of the singly-linked list, containing the `head`, `tail`, and `next` pointers and a 200 status code.  
 ### Example Response
@@ -51,7 +51,7 @@ When the linked list has nodes
 }
 ```
 
-## POST
+## POST /new_message
 ```http://localhost:3000/new_message```  
 This endpoint routes to a function that handles the creation of a new message. The request, response, and local messageQueue are passed in and the `insert` method of the messageQueue is called which asynchronously inserts a message at the back of the queue. The endpoint returns a response containing the message ID of the newly created message with a 200 status code for success. If there are errors in insertion, it returns a 404 status code and information on what was returned from the called function. 
 
@@ -84,8 +84,8 @@ For a failure:
 "Received undefined from function"
 ```
 
-## DELETE
-```/consume_messsage```  
+## DELETE /consume_message
+```http://localhost:3000/consume_messsage```  
 This endpoint routes to a function that consumes the message at the front of the queue. It passes the request, response, and local messageQueue and calls the `remove` function of the messageQueue class. This function takes the node at the front of the linked list, disconnects it from the list, and runs the message (ie. console.log the message). It returns a response signifying the message ID being fulfilled with a 200 status code. Any failures in removing the message from the queue, or with an empty queue returns a 404 status and a response signifying that the queue might be empty. 
 
 ### Example Response  
