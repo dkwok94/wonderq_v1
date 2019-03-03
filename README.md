@@ -1,4 +1,5 @@
 # WonderQ
+Access the application at the following link: https://wonderq-client-dkwok94.herokuapp.com/
 
 # About
 WonderQ is a simple message queue service. It was designed as a singly linked list which would provide O(1) for insertion and removal via a head and tail pointer. I was not able to implement a database for data persistence, so every time the server is restarted, the linked list instance will be reset. However, within a single session, you can create messages and consume them. I have provided a front-end React application to view the state of the queue.
